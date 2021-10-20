@@ -1,0 +1,25 @@
+#+TITLE: timu-rouge-theme
+#+AUTHOR: Aimé Bertrand
+#+DATE: [2021-10-20 Sun]
+#+LANGUAGE: en
+#+OPTIONS: d:t toc:nil num:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://macowners.club/css/gtd.css" />
+#+KEYWORDS: theme spacegrey
+#+STARTUP: indent content
+
+Color theme inspired by the [[https://vscodethemes.com/e/josef.rouge-theme][Rouge Theme for VSCode]].
+
+* Illustration
+#+html: <p align="center"><img src="img/timu-rouge.png" width="100%"/></p>
+
+* Installation
+** Manual installation
+1. Download the [[https://gitlab.com/aimebertrand/timu-rouge-theme/-/raw/main/timu-rouge-theme.el?inline=false][=timu-rouge-theme.el=]] file and add it to your =custom-load-path=.
+2. In your =~/.emacs.d/init.el= or =~/.emacs=:
+
+#+begin_src emacs-lisp
+  (load-theme 'timu-rouge t)
+#+end_src
+
+* License
+MIT License
