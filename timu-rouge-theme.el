@@ -748,7 +748,7 @@ Sourced other themes to get information about font faces for packages.")
    `(hl-fill-column-face ((,class (:inherit (hl-line shadow)))))
 
 ;;;; hl-line (built-in)
-   `(hl-line ((,class (:background ,bg-org :extend t))))
+   `(hl-line ((,class (:background ,rouge2 :extend t))))
 
 ;;;; hl-todo
    `(hl-todo ((,class (:foreground ,red :weight bold))))
