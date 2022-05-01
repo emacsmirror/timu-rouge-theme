@@ -58,6 +58,44 @@
 
 ;;; Code:
 
+(defgroup timu-rouge-theme ()
+  "Customise group for the \"Timu Rouge\" theme."
+  :group 'faces
+  :prefix "timu-rouge-")
+
+(defface timu-rouge-default-face
+  '((t nil))
+  "Custom basic default `timu-rouge-theme' face."
+  :group 'timu-rouge-theme)
+
+(defface timu-rouge-bold-face
+  '((t :weight bold))
+  "Custom basic bold `timu-rouge-theme' face."
+  :group 'timu-rouge-theme)
+
+(defface timu-rouge-bold-face-italic
+  '((t :weight bold :slant italic))
+  "Custom basic bold-italic `timu-rouge-theme' face."
+  :group 'timu-rouge-theme)
+
+(defface timu-rouge-italic-face
+  '((((supports :slant italic)) :slant italic)
+    (t :slant italic))
+  "Custom basic italic `timu-rouge-theme' face."
+  :group 'timu-rouge-theme)
+
+(defface timu-rouge-underline-face
+  '((((supports :underline t)) :underline t)
+    (t :underline t))
+  "Custom basic underlined `timu-rouge-theme' face."
+  :group 'timu-rouge-theme)
+
+(defface timu-rouge-strike-through-face
+  '((((supports :strike-through t)) :strike-through t)
+    (t :strike-through t))
+  "Custom basic strike-through `timu-rouge-theme' face."
+  :group 'timu-rouge-theme)
+
 (deftheme timu-rouge
   "Color theme inspired by the Rouge Theme for VSCode.
 Sourced other themes to get information about font faces for packages.")
@@ -90,12 +128,22 @@ Sourced other themes to get information about font faces for packages.")
       (darkblue  "#1e6378")
       (purple    "#5d80ae")
       (cyan      "#88c0d0")
-      (darkcyan  "#507681"))
+      (darkcyan  "#507681")
+      (black     "#000000")
+      (white     "#ffffff"))
 
   (custom-theme-set-faces
    'timu-rouge
 
 ;;; Custom faces - dark
+
+;;;; timu-rouge-faces - dark
+   `(timu-rouge-default-face ((,class (:background ,bg :foreground ,fg))))
+   `(timu-rouge-bold-face ((,class (:weight bold :foreground ,rouge8))))
+   `(timu-rouge-bold-face-italic ((,class (:weight bold :slant italic :foreground ,rouge8))))
+   `(timu-rouge-italic-face ((,class (:slant italic :foreground ,white))))
+   `(timu-rouge-underline-face ((,class (:underline ,darkred))))
+   `(timu-rouge-strike-through-face ((,class (:strike-through ,darkred))))
 
 ;;;; default faces
    `(bold ((,class (:weight bold))))
