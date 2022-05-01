@@ -382,7 +382,7 @@ Sourced other themes to get information about font faces for packages.")
    `(compilation-mode-line-fail ((,class (:foreground ,red :weight bold))))
    `(compilation-warning ((,class (:foreground ,yellow :slant italic))))
 
-;;;; corfu - dark
+;;;; corfu
    `(corfu-bar ((,class (:background ,bg-other :foreground ,fg))))
    `(corfu-echo ((,class (:foreground ,red))))
    `(corfu-border ((,class (:background ,bg-other :foreground ,fg))))
@@ -641,7 +641,7 @@ Sourced other themes to get information about font faces for packages.")
    `(evil-snipe-first-match-face ((,class (:foreground ,red :background ,darkblue :weight bold))))
    `(evil-snipe-matches-face ((,class (:foreground ,red :underline t :weight bold))))
 
-;;;; expenses - dark
+;;;; expenses
    `(expenses-face-date ((,class (:foreground ,red :weight bold))))
    `(expenses-face-expence ((,class (:foreground ,green :weight bold))))
    `(expenses-face-message ((,class (:foreground ,orange :weight bold))))
@@ -1597,7 +1597,7 @@ Sourced other themes to get information about font faces for packages.")
 ;;;; yasnippet
    `(yas-field-highlight-face ((,class (:foreground ,green :background ,rouge0 :weight bold))))
 
-;;;; ytel - dark
+;;;; ytel
    `(ytel-video-published-face ((,class (:foreground ,magenta))))
    `(ytel-channel-name-face ((,class (:foreground ,orange))))
    `(ytel-video-length-face ((,class (:foreground ,blue))))
