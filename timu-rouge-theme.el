@@ -382,6 +382,15 @@ Sourced other themes to get information about font faces for packages.")
    `(compilation-mode-line-fail ((,class (:foreground ,red :weight bold))))
    `(compilation-warning ((,class (:foreground ,yellow :slant italic))))
 
+;;;; corfu - dark
+   `(corfu-bar ((,class (:background ,bg-other :foreground ,fg))))
+   `(corfu-echo ((,class (:foreground ,red))))
+   `(corfu-border ((,class (:background ,bg-other :foreground ,fg))))
+   `(corfu-current ((,class (:foreground ,red :weight bold))))
+   `(corfu-default ((,class (:background ,bg-other :foreground ,fg))))
+   `(corfu-deprecated ((,class (:foreground ,orange))))
+   `(corfu-annotations ((,class (:foreground ,magenta))))
+
 ;;;; counsel
    `(counsel-variable-documentation ((,class (:foreground ,blue))))
 
