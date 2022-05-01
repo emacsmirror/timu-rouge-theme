@@ -632,6 +632,11 @@ Sourced other themes to get information about font faces for packages.")
    `(evil-snipe-first-match-face ((,class (:foreground ,red :background ,darkblue :weight bold))))
    `(evil-snipe-matches-face ((,class (:foreground ,red :underline t :weight bold))))
 
+;;;; expenses - dark
+   `(expenses-face-date ((,class (:foreground ,red :weight bold))))
+   `(expenses-face-expence ((,class (:foreground ,green :weight bold))))
+   `(expenses-face-message ((,class (:foreground ,orange :weight bold))))
+
 ;;;; flx-ido
    `(flx-highlight-face ((,class (:weight bold :foreground ,yellow :underline nil))))
 
