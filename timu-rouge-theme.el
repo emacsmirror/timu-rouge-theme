@@ -1588,6 +1588,12 @@ Sourced other themes to get information about font faces for packages.")
 ;;;; yasnippet
    `(yas-field-highlight-face ((,class (:foreground ,green :background ,rouge0 :weight bold))))
 
+;;;; ytel - dark
+   `(ytel-video-published-face ((,class (:foreground ,magenta))))
+   `(ytel-channel-name-face ((,class (:foreground ,orange))))
+   `(ytel-video-length-face ((,class (:foreground ,blue))))
+   `(ytel-video-view-face ((,class (:foreground ,darkcyan))))
+
    (custom-theme-set-variables
     'timu-rouge
     `(ansi-color-names-vector [bg, red, green, teal, cyan, blue, yellow, fg]))))
