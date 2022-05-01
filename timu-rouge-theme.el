@@ -6,7 +6,7 @@
 ;; Maintainer: Aimé Bertrand <aime.bertrand@macowners.club>
 ;; Created: 20 Oct 2021
 ;; Keywords: faces themes
-;; Version: 1.0
+;; Version: 1.2
 ;; Package-Requires: ((emacs "27.1"))
 ;; Homepage: https://gitlab.com/aimebertrand/timu-rouge-theme
 
@@ -1524,6 +1524,45 @@ Sourced other themes to get information about font faces for packages.")
    `(treemacs-git-untracked-face ((,class (:foreground ,rouge5))))
    `(treemacs-root-face ((,class (:foreground ,orange :weight bold :height 1.2))))
    `(treemacs-tags-face ((,class (:foreground ,red))))
+
+;;;; tree-sitter-hl
+   `(tree-sitter-hl-face:function ((,class (:foreground ,blue))))
+   `(tree-sitter-hl-face:function.call ((,class (:foreground ,blue))))
+   `(tree-sitter-hl-face:function.builtin ((,class (:foreground ,red))))
+   `(tree-sitter-hl-face:function.special ((,class (:foreground ,fg :weight bold))))
+   `(tree-sitter-hl-face:function.macro ((,class (:foreground ,fg :weight bold))))
+   `(tree-sitter-hl-face:method ((,class (:foreground ,blue))))
+   `(tree-sitter-hl-face:method.call ((,class (:foreground ,orange))))
+   `(tree-sitter-hl-face:type ((,class (:foreground ,yellow))))
+   `(tree-sitter-hl-face:type.parameter ((,class (:foreground ,darkcyan))))
+   `(tree-sitter-hl-face:type.argument ((,class (:foreground ,yellow))))
+   `(tree-sitter-hl-face:type.builtin ((,class (:foreground ,red))))
+   `(tree-sitter-hl-face:type.super ((,class (:foreground ,yellow))))
+   `(tree-sitter-hl-face:constructor ((,class (:foreground ,yellow))))
+   `(tree-sitter-hl-face:variable ((,class (:foreground ,darkcyan))))
+   `(tree-sitter-hl-face:variable.parameter ((,class (:foreground ,darkcyan))))
+   `(tree-sitter-hl-face:variable.builtin ((,class (:foreground ,red))))
+   `(tree-sitter-hl-face:variable.special ((,class (:foreground ,yellow))))
+   `(tree-sitter-hl-face:property ((,class (:foreground ,magenta))))
+   `(tree-sitter-hl-face:property.definition ((,class (:foreground ,darkcyan))))
+   `(tree-sitter-hl-face:comment ((,class (:foreground ,rouge5 :slant italic))))
+   `(tree-sitter-hl-face:doc ((,class (:foreground ,rouge5 :slant italic))))
+   `(tree-sitter-hl-face:string ((,class (:foreground ,green))))
+   `(tree-sitter-hl-face:string.special ((,class (:foreground ,green :weight bold))))
+   `(tree-sitter-hl-face:escape ((,class (:foreground ,red))))
+   `(tree-sitter-hl-face:embedded ((,class (:foreground ,fg))))
+   `(tree-sitter-hl-face:keyword ((,class (:foreground ,red))))
+   `(tree-sitter-hl-face:operator ((,class (:foreground ,red))))
+   `(tree-sitter-hl-face:label ((,class (:foreground ,fg))))
+   `(tree-sitter-hl-face:constant ((,class (:foreground ,magenta))))
+   `(tree-sitter-hl-face:constant.builtin ((,class (:foreground ,red))))
+   `(tree-sitter-hl-face:number ((,class (:foreground ,magenta))))
+   `(tree-sitter-hl-face:punctuation ((,class (:foreground ,fg))))
+   `(tree-sitter-hl-face:punctuation.bracket ((,class (:foreground ,fg))))
+   `(tree-sitter-hl-face:punctuation.delimiter ((,class (:foreground ,fg))))
+   `(tree-sitter-hl-face:punctuation.special ((,class (:foreground ,red))))
+   `(tree-sitter-hl-face:tag ((,class (:foreground ,red))))
+   `(tree-sitter-hl-face:attribute ((,class (:foreground ,fg))))
 
 ;;;; typescript-mode
    `(typescript-jsdoc-tag ((,class (:foreground ,rouge5))))
