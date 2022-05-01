@@ -417,6 +417,21 @@ Sourced other themes to get information about font faces for packages.")
    `(custom-variable-tag ((,class (:foreground ,darkcyan :underline t :extend nil))))
    `(custom-visibility ((,class (:foreground ,yellow :height 0.8 :underline t))))
 
+;;; diff
+   `(diff-added ((,class (:foreground ,bg :background ,green :extend t))))
+   `(diff-indicator-added ((,class (:foreground ,bg :weight bold :background ,green :extend t))))
+   `(diff-refine-added ((,class (:foreground ,bg :weight bold :background ,green :extend t))))
+   `(diff-changed ((,class (:foreground ,bg :background ,yellow :extend t))))
+   `(diff-indicator-changed ((,class (:foreground ,bg :weight bold :background ,yellow :extend t))))
+   `(diff-refine-changed ((,class (:foreground ,bg :weight bold :background ,yellow :extend t))))
+   `(diff-removed ((,class (:foreground ,bg :background ,red :extend t))))
+   `(diff-indicator-removed ((,class (:foreground ,bg :weight bold :background ,red :extend t))))
+   `(diff-refine-removed ((,class (:foreground ,bg :weight bold :background ,red :extend t))))
+   `(diff-header ((,class (:foreground ,darkcyan))))
+   `(diff-file-header ((,class (:foreground ,orange :weight bold))))
+   `(diff-hunk-header ((,class (:foreground ,bg :background ,magenta :extend t))))
+   `(diff-function ((,class (:foreground ,bg :background ,magenta :extend t))))
+
 ;;;; diff-hl
    `(diff-hl-change ((,class (:foreground ,orange :background ,orange))))
    `(diff-hl-delete ((,class (:foreground ,red :background ,red))))
