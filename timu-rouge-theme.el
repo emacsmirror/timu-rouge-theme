@@ -560,8 +560,22 @@ Sourced other themes to get information about font faces for packages.")
    `(diredfl-write-priv ((,class (:foreground ,red))))
 
 ;;;; doom-modeline
+   `(doom-modeline-bar ((,class (:foreground ,magenta))))
    `(doom-modeline-bar-inactive ((,class (:background nil))))
+   `(doom-modeline-buffer-major-mode ((,class (:foreground ,magenta))))
+   `(doom-modeline-buffer-path ((,class (:foreground ,magenta))))
    `(doom-modeline-eldoc-bar ((,class (:background ,green))))
+   `(doom-modeline-evil-emacs-state ((,class (:foreground ,cyan :weight bold))))
+   `(doom-modeline-evil-insert-state ((,class (:foreground ,red :weight bold))))
+   `(doom-modeline-evil-motion-state ((,class (:foreground ,blue :weight bold))))
+   `(doom-modeline-evil-normal-state ((,class (:foreground ,green :weight bold))))
+   `(doom-modeline-evil-operator-state ((,class (:foreground ,magenta :weight bold))))
+   `(doom-modeline-evil-replace-state ((,class (:foreground ,purple :weight bold))))
+   `(doom-modeline-evil-visual-state ((,class (:foreground ,yellow :weight bold))))
+   `(doom-modeline-highlight ((,class (:foreground ,magenta))))
+   `(doom-modeline-input-method ((,class (:foreground ,magenta))))
+   `(doom-modeline-panel ((,class (:foreground ,magenta))))
+   `(doom-modeline-project-root-dir ((,class (:foreground ,magenta))))
 
 ;;;; ediff
    `(ediff-current-diff-A ((,class (:foreground ,bg :background ,red :extend t))))
