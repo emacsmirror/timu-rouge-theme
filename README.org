@@ -4,8 +4,10 @@
 #+LANGUAGE: en
 #+OPTIONS: d:t toc:nil num:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://macowners.club/css/gtd.css" />
-#+KEYWORDS: theme spacegrey
-#+STARTUP: indent content
+#+KEYWORDS: theme rouge red dark
+#+STARTUP: indent showall
+
+#+html: <p align="left"><a href="https://melpa.org/#/timu-rouge-theme"><img alt="MELPA" src="https://melpa.org/packages/timu-rouge-theme-badge.svg"/></a></p>
 
 Color theme inspired by the [[https://vscodethemes.com/e/josef.rouge-theme][Rouge Theme for VSCode]].
 
@@ -19,6 +21,22 @@ Color theme inspired by the [[https://vscodethemes.com/e/josef.rouge-theme][Roug
 
 #+begin_src emacs-lisp
   (load-theme 'timu-rouge t)
+#+end_src
+
+** From [[https://melpa.org/#/timu-rouge-theme][Melpa]] with ~package.el~
+1. =M-x package-install RET timu-rouge-theme RET=.
+2. In your =~/.emacs.d/init.el= or =~/.emacs=:
+
+#+begin_src emacs-lisp
+  (load-theme 'timu-rouge t)
+#+end_src
+
+** With [[https://github.com/jwiegley/use-package][use-package]]
+#+begin_src emacs-lisp
+  (use-package timu-rouge-theme
+    :ensure t
+    :config
+    (load-theme 'timu-rouge t))
 #+end_src
 
 * License
