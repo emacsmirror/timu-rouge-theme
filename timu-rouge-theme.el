@@ -1403,8 +1403,8 @@ Sourced other themes to get information about font faces for packages.")
    `(sh-quoted-exec ((,class (:foreground ,fg :weight bold))))
 
 ;;;; show-paren
-   `(show-paren-match ((,class (:foreground ,red :background ,rouge0 :weight ultra-bold))))
-   `(show-paren-mismatch ((,class (:foreground ,rouge0 :background ,red :weight ultra-bold))))
+   `(show-paren-match ((,class (:foreground ,red :weight ultra-bold :underline ,red))))
+   `(show-paren-mismatch ((,class (:foreground ,bg :background ,red :weight ultra-bold))))
 
 ;;;; smart-mode-line
    `(sml/charging ((,class (:foreground ,green))))
