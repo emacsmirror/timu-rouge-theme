@@ -886,13 +886,14 @@ Sourced other themes to get information about font faces for packages.")
    `(iedit-occurrence ((,class (:foreground ,purple :weight bold :inverse-video t))))
    `(iedit-read-only-occurrence ((,class (:background ,grey :foreground nil :distant-foreground ,bg :extend t))))
 
+
 ;;;; imenu-list
-   `(imenu-list-entry-face-0 ((,class (:foreground ,orange))))
-   `(imenu-list-entry-face-1 ((,class (:foreground ,green))))
-   `(imenu-list-entry-face-2 ((,class (:foreground ,yellow))))
-   `(imenu-list-entry-subalist-face-0 ((,class (:foreground ,orange :weight bold))))
-   `(imenu-list-entry-subalist-face-1 ((,class (:foreground ,green :weight bold))))
-   `(imenu-list-entry-subalist-face-2 ((,class (:foreground ,yellow :weight bold))))
+   `(imenu-list-entry-face-0 ((,class (:foreground ,red))))
+   `(imenu-list-entry-face-1 ((,class (:foreground ,blue))))
+   `(imenu-list-entry-face-2 ((,class (:foreground ,orange))))
+   `(imenu-list-entry-subalist-face-0 ((,class (:foreground ,red :weight bold))))
+   `(imenu-list-entry-subalist-face-1 ((,class (:foreground ,blue :weight bold))))
+   `(imenu-list-entry-subalist-face-2 ((,class (:foreground ,orange :weight bold))))
 
 ;;;; indent-guide
    `(indent-guide-face ((,class (:background ,rouge2 :extend t))))
