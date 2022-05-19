@@ -1220,10 +1220,10 @@ Sourced other themes to get information about font faces for packages.")
    `(notmuch-wash-toggle-button ((,class (:foreground ,fg))))
 
 ;;;; orderless
-   `(orderless-match-face-0 ((,class (:foreground ,teal :weight bold :underline t))))
-   `(orderless-match-face-1 ((,class (:foreground ,darkcyan :weight bold :underline t))))
-   `(orderless-match-face-2 ((,class (:foreground ,cyan :weight bold :underline t))))
-   `(orderless-match-face-3 ((,class (:foreground ,green :weight bold :underline t))))
+   `(orderless-match-face-0 ((,class (:foreground ,red :weight bold :underline t))))
+   `(orderless-match-face-1 ((,class (:foreground ,darkred :weight bold :underline t))))
+   `(orderless-match-face-2 ((,class (:foreground ,orange :weight bold :underline t))))
+   `(orderless-match-face-3 ((,class (:foreground ,yellow :weight bold :underline t))))
 
 ;;;; objed
    `(objed-hl ((,class (:background ,grey :distant-foreground ,bg :extend t))))
