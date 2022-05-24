@@ -6,7 +6,7 @@
 ;; Maintainer: Aimé Bertrand <aime.bertrand@macowners.club>
 ;; Created: 20 Oct 2021
 ;; Keywords: faces themes
-;; Version: 1.2
+;; Version: 1.4
 ;; Package-Requires: ((emacs "27.1"))
 ;; Homepage: https://gitlab.com/aimebertrand/timu-rouge-theme
 
@@ -95,6 +95,20 @@
     (t :strike-through t))
   "Custom basic strike-through `timu-rouge-theme' face."
   :group 'timu-rouge-theme)
+
+(defcustom timu-rouge-scale-faces nil
+  "Variable to control the scale of select faces."
+  :type 'boolean
+  :group 'timu-rouge-theme)
+
+(defun timu-rouge-do-scale (face-height)
+  "Function for scaling the face to the FACE-HEIGHT.
+Uses `timu-rouge-scale-faces' for conditional."
+  (cond
+   ((eq t timu-rouge-scale-faces)
+    (list :height face-height))
+   ((eq nil timu-rouge-scale-faces)
+    (list :height 1.0))))
 
 (deftheme timu-rouge
   "Color theme inspired by the Rouge Theme for VSCode.
@@ -1272,9 +1286,9 @@ Sourced other themes to get information about font faces for packages.")
    `(org-code ((,class (:foreground ,darkred))))
    `(org-date ((,class (:foreground ,yellow :background ,bg-org))))
    `(org-default ((,class (:background ,bg :foreground ,fg))))
-   `(org-document-info ((,class (:foreground ,darkred))))
-   `(org-document-title ((,class (:foreground ,darkred :weight bold))))
+   `(org-document-info ((,class (:foreground ,darkred ,@(timu-rouge-do-scale 1.2)))))
    `(org-document-info-keyword ((,class (:foreground ,rouge5))))
+   `(org-document-title ((,class (:foreground ,darkred :weight bold ,@(timu-rouge-do-scale 1.3)))))
    `(org-done ((,class (:foreground ,rouge5 :weight bold))))
    `(org-ellipsis ((,class (:foreground ,grey))))
    `(org-footnote ((,class (:foreground ,darkred))))
@@ -1282,9 +1296,9 @@ Sourced other themes to get information about font faces for packages.")
    `(org-headline-done ((,class (:foreground ,rouge5))))
    `(org-hide ((,class (:foreground ,bg))))
    `(org-latex-and-related ((,class (:foreground ,rouge8 :weight bold))))
-   `(org-level-1 ((,class (:foreground ,blue :weight ultra-bold))))
-   `(org-level-2 ((,class (:foreground ,magenta :weight bold))))
-   `(org-level-3 ((,class (:foreground ,darkcyan :weight bold))))
+   `(org-level-1 ((,class (:foreground ,blue :weight ultra-bold ,@(timu-rouge-do-scale 1.3)))))
+   `(org-level-2 ((,class (:foreground ,red :weight bold ,@(timu-rouge-do-scale 1.2)))))
+   `(org-level-3 ((,class (:foreground ,orange :weight bold ,@(timu-rouge-do-scale 1.1)))))
    `(org-level-4 ((,class (:foreground ,darkred))))
    `(org-level-5 ((,class (:foreground ,green))))
    `(org-level-6 ((,class (:foreground ,teal))))
