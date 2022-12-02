@@ -6,7 +6,7 @@
 ;; Maintainer: Aimé Bertrand <aime.bertrand@macowners.club>
 ;; Created: 20 Oct 2021
 ;; Keywords: faces themes
-;; Version: 1.4
+;; Version: 1.5
 ;; Package-Requires: ((emacs "27.1"))
 ;; Homepage: https://gitlab.com/aimebertrand/timu-rouge-theme
 
@@ -69,7 +69,25 @@
 ;;
 ;;   By default the scaling is turned off.
 ;;   To setup the scaling add the following to your `~/.emacs.d/init.el' or `~/.emacs':
-;;     (customize-set-variable 'timu-rouge-scale-faces t)
+;;
+;;   1. Default scaling
+;;     This will turn on default values of scaling in the theme.
+;;
+;;     (customize-set-variable 'timu-rouge-scale-org-document-title t)
+;;     (customize-set-variable 'timu-rouge-scale-org-document-info t)
+;;     (customize-set-variable 'timu-rouge-scale-org-level-1 t)
+;;     (customize-set-variable 'timu-rouge-scale-org-level-2 t)
+;;     (customize-set-variable 'timu-rouge-scale-org-level-3 t)
+;;
+;;   2. Custom scaling
+;;     You can choose your own scaling values as well.
+;;     The following is a somewhat exaggerated example.
+;;
+;;     (customize-set-variable 'timu-rouge-scale-org-document-title 1.8)
+;;     (customize-set-variable 'timu-rouge-scale-org-document-info 1.4)
+;;     (customize-set-variable 'timu-rouge-scale-org-level-1 1.8)
+;;     (customize-set-variable 'timu-rouge-scale-org-level-2 1.4)
+;;     (customize-set-variable 'timu-rouge-scale-org-level-3 1.2)
 
 ;;; Code:
 
@@ -111,19 +129,59 @@
   "Custom basic strike-through `timu-rouge-theme' face."
   :group 'timu-rouge-theme)
 
-(defcustom timu-rouge-scale-faces nil
-  "Variable to control the scale of select faces."
-  :type 'boolean
+(defcustom timu-rouge-scale-org-document-info nil
+  "Variable to control the scale of the `org-document-info' faces.
+Possible Values: t, number or nil. When t, use theme default height."
+  :type '(choice
+          (const :tag "No scaling" nil)
+          (const :tag "Theme default scaling" t)
+          (number :tag "Your custom scaling"))
   :group 'timu-rouge-theme)
 
-(defun timu-rouge-do-scale (face-height)
+(defcustom timu-rouge-scale-org-document-title nil
+  "Variable to control the scale of the `org-document-title' faces.
+Possible Values: t, number or nil. When t, use theme default height."
+  :type '(choice
+          (const :tag "No scaling" nil)
+          (const :tag "Theme default scaling" t)
+          (number :tag "Your custom scaling"))
+  :group 'timu-rouge-theme)
+
+(defcustom timu-rouge-scale-org-level-1 nil
+  "Variable to control the scale of the `org-level-1' faces.
+Possible Values: t, number or nil. When t, use theme default height."
+  :type '(choice
+          (const :tag "No scaling" nil)
+          (const :tag "Theme default scaling" t)
+          (number :tag "Your custom scaling"))
+  :group 'timu-rouge-theme)
+
+(defcustom timu-rouge-scale-org-level-2 nil
+  "Variable to control the scale of the `org-level-2' faces.
+Possible Values: t, number or nil. When t, use theme default height."
+  :type '(choice
+          (const :tag "No scaling" nil)
+          (const :tag "Theme default scaling" t)
+          (number :tag "Your custom scaling"))
+  :group 'timu-rouge-theme)
+
+(defcustom timu-rouge-scale-org-level-3 nil
+  "Variable to control the scale of the `org-level-3' faces.
+Possible Values: t, number or nil. When t, use theme default height."
+  :type '(choice
+          (const :tag "No scaling" nil)
+          (const :tag "Theme default scaling" t)
+          (number :tag "Your custom scaling"))
+  :group 'timu-rouge-theme)
+
+(defun timu-rouge-do-scale (control default-height)
   "Function for scaling the face to the FACE-HEIGHT.
-Uses `timu-rouge-scale-faces' for conditional."
+Uses `timu-rouge-scale-faces' for the value of CONTROL."
   (cond
-   ((eq t timu-rouge-scale-faces)
-    (list :height face-height))
-   ((eq nil timu-rouge-scale-faces)
-    (list :height 1.0))))
+   ((numberp control) (list :height control))
+   ((eq t control) (list :height default-height))
+   ((eq nil control) (list :height 1.0))
+   (t nil)))
 
 (deftheme timu-rouge
   "Color theme inspired by the Rouge Theme for VSCode.
@@ -1301,9 +1359,9 @@ Sourced other themes to get information about font faces for packages.")
    `(org-code ((,class (:foreground ,darkred))))
    `(org-date ((,class (:foreground ,yellow :background ,bg-org))))
    `(org-default ((,class (:background ,bg :foreground ,fg))))
-   `(org-document-info ((,class (:foreground ,darkred ,@(timu-rouge-do-scale 1.2)))))
+   `(org-document-info ((,class (:foreground ,darkred ,@(timu-rouge-do-scale timu-rouge-scale-org-document-info 1.2)))))
    `(org-document-info-keyword ((,class (:foreground ,rouge5))))
-   `(org-document-title ((,class (:foreground ,darkred :weight bold ,@(timu-rouge-do-scale 1.3)))))
+   `(org-document-title ((,class (:foreground ,darkred :weight bold ,@(timu-rouge-do-scale timu-rouge-scale-org-document-title 1.3)))))
    `(org-done ((,class (:foreground ,rouge5 :weight bold))))
    `(org-ellipsis ((,class (:foreground ,grey))))
    `(org-footnote ((,class (:foreground ,darkred))))
@@ -1311,9 +1369,9 @@ Sourced other themes to get information about font faces for packages.")
    `(org-headline-done ((,class (:foreground ,rouge5))))
    `(org-hide ((,class (:foreground ,bg))))
    `(org-latex-and-related ((,class (:foreground ,rouge8 :weight bold))))
-   `(org-level-1 ((,class (:foreground ,blue :weight ultra-bold ,@(timu-rouge-do-scale 1.3)))))
-   `(org-level-2 ((,class (:foreground ,red :weight bold ,@(timu-rouge-do-scale 1.2)))))
-   `(org-level-3 ((,class (:foreground ,orange :weight bold ,@(timu-rouge-do-scale 1.1)))))
+   `(org-level-1 ((,class (:foreground ,blue :weight ultra-bold ,@(timu-rouge-do-scale timu-rouge-scale-org-level-1 1.3)))))
+   `(org-level-2 ((,class (:foreground ,red :weight bold ,@(timu-rouge-do-scale timu-rouge-scale-org-level-2 1.2)))))
+   `(org-level-3 ((,class (:foreground ,orange :weight bold ,@(timu-rouge-do-scale timu-rouge-scale-org-level-3 1.1)))))
    `(org-level-4 ((,class (:foreground ,darkred))))
    `(org-level-5 ((,class (:foreground ,green))))
    `(org-level-6 ((,class (:foreground ,teal))))

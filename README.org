@@ -1,4 +1,4 @@
-#+TITLE: timu-rouge-theme
+#+TITLE: TIMU-ROUGE-THEME
 #+AUTHOR: Aimé Bertrand
 #+DATE: [2021-10-20 Sun]
 #+LANGUAGE: en
@@ -41,7 +41,7 @@ Color theme inspired by the [[https://vscodethemes.com/e/josef.rouge-theme][Roug
 
 
 * Configuration
-You can now scale (up) some faces (in =org-mode= for now):
+You can now scale some faces (in =org-mode= for now):
 
 - ~org-document-info~
 - ~org-document-title~
@@ -53,9 +53,28 @@ More to follow in the future.
 
 By default the scaling is turned off. To setup the scaling add the following to your =~/.emacs.d/init.el= or =~/.emacs=:
 
+** Default scaling
+This will turn on default values of scaling in the theme.
+
 #+begin_src emacs-lisp
-  (customize-set-variable 'timu-rouge-scale-faces t)
+  (customize-set-variable 'timu-rouge-scale-org-document-title t)
+  (customize-set-variable 'timu-rouge-scale-org-document-info t)
+  (customize-set-variable 'timu-rouge-scale-org-level-1 t)
+  (customize-set-variable 'timu-rouge-scale-org-level-2 t)
+  (customize-set-variable 'timu-rouge-scale-org-level-3 t)
 #+end_src
+
+** Custom scaling
+You can choose your own scaling values as well. The following is a somewhat exaggerated example.
+
+#+begin_src emacs-lisp
+  (customize-set-variable 'timu-rouge-scale-org-document-title 1.8)
+  (customize-set-variable 'timu-rouge-scale-org-document-info 1.4)
+  (customize-set-variable 'timu-rouge-scale-org-level-1 1.8)
+  (customize-set-variable 'timu-rouge-scale-org-level-2 1.4)
+  (customize-set-variable 'timu-rouge-scale-org-level-3 1.2)
+#+end_src
+
 
 * License
 MIT License
