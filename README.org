@@ -41,7 +41,7 @@ Color theme inspired by the [[https://vscodethemes.com/e/josef.rouge-theme][Roug
 
 
 * Configuration
-** Scalling
+** Scaling
 You can now scale some faces (in =org-mode= for now):
 
 - ~org-document-info~
@@ -77,7 +77,7 @@ You can choose your own scaling values as well. The following is a somewhat exag
 #+end_src
 
 ** "Intense" colors for org-mode
-To emphasize some elements in org-mode. You can set a variable to me some faces more "intense".
+To emphasize some elements in org-mode. You can set a variable to make some faces more "intense".
 
 #+html: <p align="center"><img src="img/timu-rouge-intense.png" width="100%"/></p>
 

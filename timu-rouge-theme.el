@@ -57,7 +57,7 @@
 ;;         (load-theme 'timu-rouge t))
 ;;
 ;; II. Configuration
-;;   1. Scalling
+;;   A. Scaling
 ;;     You can now scale some faces (in `org-mode' for now):
 ;;
 ;;     - `org-document-info'
@@ -71,7 +71,7 @@
 ;;     By default the scaling is turned off.
 ;;     To setup the scaling add the following to your `~/.emacs.d/init.el' or `~/.emacs':
 ;;
-;;     a. Default scaling
+;;     1. Default scaling
 ;;       This will turn on default values of scaling in the theme.
 ;;
 ;;         (customize-set-variable 'timu-rouge-scale-org-document-title t)
@@ -80,7 +80,7 @@
 ;;         (customize-set-variable 'timu-rouge-scale-org-level-2 t)
 ;;         (customize-set-variable 'timu-rouge-scale-org-level-3 t)
 ;;
-;;     b. Custom scaling
+;;     2. Custom scaling
 ;;       You can choose your own scaling values as well.
 ;;       The following is a somewhat exaggerated example.
 ;;
@@ -90,9 +90,9 @@
 ;;         (customize-set-variable 'timu-rouge-scale-org-level-2 1.4)
 ;;         (customize-set-variable 'timu-rouge-scale-org-level-3 1.2)
 ;;
-;;   1. "Intense" colors for org-mode
+;;   B. "Intense" colors for org-mode
 ;;     To emphasize some elements in org-mode.
-;;     You can set a variable to me some faces more "intense".
+;;     You can set a variable to make some faces more "intense".
 ;;
 ;;     By default the intense colors are turned off.
 ;;     To turn this on add the following to your =~/.emacs.d/init.el= or =~/.emacs=:
@@ -202,8 +202,7 @@ Uses `timu-rouge-scale-faces' for the value of CONTROL."
   "Function Adding intense colors to `org-mode'.
 OLCOLOR changes the `overline' color and BGCOLOR changes the `background' color."
   (if (eq t timu-rouge-org-insense-colors)
-      (list :overline olcolor :background bgcolor)
-    (list :overline nil :background nil)))
+      (list :overline olcolor :background bgcolor)))
 
 (deftheme timu-rouge
   "Color theme inspired by the Rouge Theme for VSCode.
@@ -1371,7 +1370,7 @@ Sourced other themes to get information about font faces for packages.")
 
 ;;;; org-mode
    `(org-archived ((,class (:foreground ,rouge5))))
-   `(org-block ((,class (:foreground ,rouge8 :background ,bg-org :extend t))))
+   `(org-block ((,class (:foreground ,rouge8 :background ,bg-org :extend t ,@(timu-rouge-set-intense-org-colors rouge2 rouge2)))))
    `(org-block-background ((,class (:background ,bg-org :extend t))))
    `(org-block-begin-line ((,class (:foreground ,rouge5 :slant italic :background ,bg-org :extend t))))
    `(org-block-end-line ((,class (:foreground ,rouge5 :slant italic :background ,bg-org :extend t))))
