@@ -6,7 +6,7 @@
 ;; Maintainer: Aimé Bertrand <aime.bertrand@macowners.club>
 ;; Created: 20 Oct 2021
 ;; Keywords: faces themes
-;; Version: 1.6
+;; Version: 1.7
 ;; Package-Requires: ((emacs "27.1"))
 ;; Homepage: https://gitlab.com/aimebertrand/timu-rouge-theme
 
@@ -204,6 +204,24 @@ OVERLINE-COLOR changes the `overline' color.
 BACKGROUND-COLOR changes the `background' color."
   (if (eq t timu-rouge-org-intense-colors)
       (list :overline overline-color :background background-color)))
+
+(defcustom timu-rouge-mode-line-border nil
+  "Variable to control the border of `mode-line'.
+With a value of t the mode-line has a border."
+  :type 'boolean
+  :group 'timu-rouge-theme)
+
+(defun timu-rouge-set-mode-line-active-border (boxcolor)
+  "Function adding a border to the `mode-line' of the active window.
+BOXCOLOR supplies the border color."
+  (if (eq t timu-rouge-mode-line-border)
+        (list :box boxcolor)))
+
+(defun timu-rouge-set-mode-line-inactive-border (boxcolor)
+  "Function adding a border to the `mode-line' of the inactive window.
+BOXCOLOR supplies the border color."
+  (if (eq t timu-rouge-mode-line-border)
+        (list :box boxcolor)))
 
 (deftheme timu-rouge
   "Color theme inspired by the Rouge Theme for VSCode.
@@ -1233,11 +1251,11 @@ Sourced other themes to get information about font faces for packages.")
    `(mmm-special-submode-face ((,class (:background ,green))))
 
 ;;;; mode-line
-   `(mode-line ((,class (:background ,rouge1 :foreground ,fg :distant-foreground ,bg))))
+   `(mode-line ((,class (,@(timu-rouge-set-mode-line-active-border red) :background ,rouge3 :foreground ,fg :distant-foreground ,bg))))
    `(mode-line-buffer-id ((,class (:weight bold))))
    `(mode-line-emphasis ((,class (:foreground ,magenta :weight bold :underline ,darkcyan))))
    `(mode-line-highlight ((,class (:foreground ,magenta :weight bold :underline ,darkcyan))))
-   `(mode-line-inactive ((,class (:background ,rouge2 :foreground ,rouge5 :distant-foreground ,bg-other))))
+   `(mode-line-inactive ((,class (,@(timu-rouge-set-mode-line-inactive-border rouge4) :background ,rouge3 :foreground ,rouge5 :distant-foreground ,bg-other))))
 
 ;;;; mu4e
    `(mu4e-forwarded-face ((,class (:foreground ,cyan))))
