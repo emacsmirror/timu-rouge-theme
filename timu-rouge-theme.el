@@ -96,7 +96,7 @@
 ;;
 ;;     By default the intense colors are turned off.
 ;;     To turn this on add the following to your =~/.emacs.d/init.el= or =~/.emacs=:
-;;       (customize-set-variable 'timu-rouge-org-insense-colors t)
+;;       (customize-set-variable 'timu-rouge-org-intense-colors t)
 
 
 ;;; Code:
@@ -141,68 +141,69 @@
 
 (defcustom timu-rouge-scale-org-document-info nil
   "Variable to control the scale of the `org-document-info' faces.
-Possible Values: t, number or nil. When t, use theme default height."
+Possible values: t, number or nil. When t, use theme default height."
   :type '(choice
-          (const :tag "No scaling" nil)
-          (const :tag "Theme default scaling" t)
+          (boolean :tag "No scaling" nil)
+          (boolean :tag "Theme default scaling" t)
           (number :tag "Your custom scaling"))
   :group 'timu-rouge-theme)
 
 (defcustom timu-rouge-scale-org-document-title nil
   "Variable to control the scale of the `org-document-title' faces.
-Possible Values: t, number or nil. When t, use theme default height."
+Possible values: t, number or nil. When t, use theme default height."
   :type '(choice
-          (const :tag "No scaling" nil)
-          (const :tag "Theme default scaling" t)
+          (boolean :tag "No scaling" nil)
+          (boolean :tag "Theme default scaling" t)
           (number :tag "Your custom scaling"))
   :group 'timu-rouge-theme)
 
 (defcustom timu-rouge-scale-org-level-1 nil
   "Variable to control the scale of the `org-level-1' faces.
-Possible Values: t, number or nil. When t, use theme default height."
+Possible values: t, number or nil. When t, use theme default height."
   :type '(choice
-          (const :tag "No scaling" nil)
-          (const :tag "Theme default scaling" t)
+          (boolean :tag "No scaling" nil)
+          (boolean :tag "Theme default scaling" t)
           (number :tag "Your custom scaling"))
   :group 'timu-rouge-theme)
 
 (defcustom timu-rouge-scale-org-level-2 nil
   "Variable to control the scale of the `org-level-2' faces.
-Possible Values: t, number or nil. When t, use theme default height."
+Possible values: t, number or nil. When t, use theme default height."
   :type '(choice
-          (const :tag "No scaling" nil)
-          (const :tag "Theme default scaling" t)
+          (boolean :tag "No scaling" nil)
+          (boolean :tag "Theme default scaling" t)
           (number :tag "Your custom scaling"))
   :group 'timu-rouge-theme)
 
 (defcustom timu-rouge-scale-org-level-3 nil
   "Variable to control the scale of the `org-level-3' faces.
-Possible Values: t, number or nil. When t, use theme default height."
+Possible values: t, number or nil. When t, use theme default height."
   :type '(choice
-          (const :tag "No scaling" nil)
-          (const :tag "Theme default scaling" t)
+          (boolean :tag "No scaling" nil)
+          (boolean :tag "Theme default scaling" t)
           (number :tag "Your custom scaling"))
   :group 'timu-rouge-theme)
 
-(defun timu-rouge-do-scale (control default-height)
-  "Function for scaling the face to the FACE-HEIGHT.
-Uses `timu-rouge-scale-faces' for the value of CONTROL."
+(defun timu-rouge-do-scale (custom-height default-height)
+  "Function for scaling the face to the DEFAULT-HEIGHT or CUSTOM-HEIGHT.
+Uses `timu-rouge-scale-faces' for the value of CUSTOM-HEIGHT."
   (cond
-   ((numberp control) (list :height control))
-   ((eq t control) (list :height default-height))
-   ((eq nil control) (list :height 1.0))
+   ((numberp custom-height) (list :height custom-height))
+   ((eq t custom-height) (list :height default-height))
+   ((eq nil custom-height) (list :height 1.0))
    (t nil)))
 
-(defcustom timu-rouge-org-insense-colors nil
-  "Variable to control \"intensity\" of `org-mode' colors."
+(defcustom timu-rouge-org-intense-colors nil
+  "Variable to control \"intensity\" of `org-mode' header colors."
   :type 'boolean
   :group 'timu-rouge-theme)
 
-(defun timu-rouge-set-intense-org-colors (olcolor bgcolor)
+(defun timu-rouge-set-intense-org-colors (overline-color background-color)
   "Function Adding intense colors to `org-mode'.
-OLCOLOR changes the `overline' color and BGCOLOR changes the `background' color."
-  (if (eq t timu-rouge-org-insense-colors)
-      (list :overline olcolor :background bgcolor)))
+OVERLINE-COLOR changes the `overline' color.
+BACKGROUND-COLOR changes the `background' color."
+  (if (eq t timu-rouge-org-intense-colors)
+      (list :overline overline-color :background background-color)))
 
 (deftheme timu-rouge
   "Color theme inspired by the Rouge Theme for VSCode.
@@ -831,7 +832,7 @@ Sourced other themes to get information about font faces for packages.")
    `(git-commit-nonempty-second-line ((,class (:foreground ,red))))
    `(git-commit-overlong-summary ((,class (:foreground ,red :slant italic :weight bold))))
    `(git-commit-pseudo-header ((,class (:foreground ,rouge5 :slant italic))))
-   `(git-commit-summary ((,class (:foreground ,darkcyan))))
+   `(git-commit-summary ((,class (:foreground ,blue))))
 
 ;;;; git-gutter
    `(git-gutter:added ((,class (:foreground ,green))))

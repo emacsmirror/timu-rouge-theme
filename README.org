@@ -84,7 +84,7 @@ To emphasize some elements in org-mode. You can set a variable to make some face
 By default the intense colors are turned off. To turn this on add the following to your =~/.emacs.d/init.el= or =~/.emacs=:
 
 #+begin_src emacs-lisp
-  (customize-set-variable 'timu-rouge-org-insense-colors t)
+  (customize-set-variable 'timu-rouge-org-intense-colors t)
 #+end_src
 
 * License
