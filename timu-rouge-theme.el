@@ -6,7 +6,7 @@
 ;; Maintainer: Aimé Bertrand <aime.bertrand@macowners.club>
 ;; Created: 20 Oct 2021
 ;; Keywords: faces themes
-;; Version: 1.7
+;; Version: 1.8
 ;; Package-Requires: ((emacs "27.1"))
 ;; Homepage: https://gitlab.com/aimebertrand/timu-rouge-theme
 
@@ -97,6 +97,13 @@
 ;;     By default the intense colors are turned off.
 ;;     To turn this on add the following to your =~/.emacs.d/init.el= or =~/.emacs=:
 ;;       (customize-set-variable 'timu-rouge-org-intense-colors t)
+;;
+;; III. Utility functions
+;;   A. Toggle between intense and non intense colors for `org-mode'
+;;       M-x timu-rouge-toggle-org-colors-intensity RET.
+;;
+;;   B. Toggle between borders and no borders for the `mode-line'
+;;       M-x timu-rouge-toggle-mode-line-border RET.
 
 
 ;;; Code:
@@ -222,6 +229,26 @@ BOXCOLOR supplies the border color."
 BOXCOLOR supplies the border color."
   (if (eq t timu-rouge-mode-line-border)
         (list :box boxcolor)))
+
+;;;###autoload
+(defun timu-rouge-toggle-org-colors-intensity ()
+  "Toggle between intense and non intense colors for `org-mode'.
+Customize `timu-rouge-org-intense-colors' the to achieve this."
+  (interactive)
+  (if (eq t timu-rouge-org-intense-colors)
+      (customize-set-variable 'timu-rouge-org-intense-colors nil)
+    (customize-set-variable 'timu-rouge-org-intense-colors t))
+  (load-theme (car custom-enabled-themes) t))
+
+;;;###autoload
+(defun timu-rouge-toggle-mode-line-border ()
+  "Toggle between borders and no borders for the `mode-line'.
+Customize `timu-rouge-mode-line-border' the to achieve this."
+  (interactive)
+  (if (eq t timu-rouge-mode-line-border)
+      (customize-set-variable 'timu-rouge-mode-line-border nil)
+    (customize-set-variable 'timu-rouge-mode-line-border t))
+  (load-theme (car custom-enabled-themes) t))
 
 (deftheme timu-rouge
   "Color theme inspired by the Rouge Theme for VSCode.
