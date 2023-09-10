@@ -550,6 +550,9 @@ Sourced other themes to get information about font faces for packages.")
    `(circe-prompt-face ((,class (:weight bold :foreground ,orange))))
    `(circe-server-face ((,class (:foreground ,rouge5))))
 
+;;;; column-enforce-mode - dark
+   `(column-enforce-face ((,class (:foreground ,cyan :underline t))))
+
 ;;;; company
    `(company-preview ((,class (:foreground ,rouge5))))
    `(company-preview-common ((,class (:background ,rouge3 :foreground ,darkred))))
