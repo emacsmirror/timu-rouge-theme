@@ -1597,9 +1597,9 @@ Sourced other themes to get information about font faces for packages.")
    `(sml/vc-edited ((,class (:foreground ,green))))
 
 ;;;; smartparens
-   `(sp-pair-overlay-face ((,class (:background ,grey))))
-   `(sp-show-pair-match-face ((,class (:foreground ,red :background ,rouge0 :weight ultra-bold))))
-   `(sp-show-pair-mismatch-face ((,class (:foreground ,rouge0 :background ,red :weight ultra-bold))))
+   `(sp-pair-overlay-face ((,class (:underline ,yellow))))
+   `(sp-show-pair-match-face ((,class (:foreground ,orange :weight bold))))
+   `(sp-show-pair-mismatch-face ((,class (:foreground ,orange :weight bold))))
 
 ;;;; smerge-tool
    `(smerge-base ((,class (:background ,blue))))
