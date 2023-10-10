@@ -241,13 +241,13 @@ With a value of t the mode-line has a border."
   "Function adding a border to the `mode-line' of the active window.
 BOXCOLOR supplies the border color."
   (if (eq t timu-rouge-mode-line-border)
-        (list :box boxcolor)))
+      (list :box boxcolor)))
 
 (defun timu-rouge-set-mode-line-inactive-border (boxcolor)
   "Function adding a border to the `mode-line' of the inactive window.
 BOXCOLOR supplies the border color."
   (if (eq t timu-rouge-mode-line-border)
-        (list :box boxcolor)))
+      (list :box boxcolor)))
 
 ;;;###autoload
 (defun timu-rouge-toggle-org-colors-intensity ()
@@ -624,7 +624,7 @@ Sourced other themes to get information about font faces for packages.")
    `(custom-variable-tag ((,class (:foreground ,darkcyan :underline t :extend nil))))
    `(custom-visibility ((,class (:foreground ,yellow :height 0.8 :underline t))))
 
-;;; diff
+;;;; diff
    `(diff-added ((,class (:foreground ,bg :background ,green :extend t))))
    `(diff-indicator-added ((,class (:foreground ,bg :weight bold :background ,green :extend t))))
    `(diff-refine-added ((,class (:foreground ,bg :weight bold :background ,green :extend t))))
