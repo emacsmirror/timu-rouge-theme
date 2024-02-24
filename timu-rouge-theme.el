@@ -768,6 +768,9 @@ Sourced other themes to get information about font faces for packages.")
    `(ediff-odd-diff-B ((,class (:background ,bg-other :extend t))))
    `(ediff-odd-diff-C ((,class (:background ,bg-other :extend t))))
 
+;;;; eldoc
+   `(eldoc-highlight-function-argument ((,class (:foreground ,red :weight bold ))))
+
 ;;;; elfeed
    `(elfeed-log-debug-level-face ((,class (:foreground ,rouge5))))
    `(elfeed-log-error-level-face ((,class (:foreground ,red))))
