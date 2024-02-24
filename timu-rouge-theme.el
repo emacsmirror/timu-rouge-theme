@@ -1505,6 +1505,16 @@ Sourced other themes to get information about font faces for packages.")
    `(outline-7 ((,class (:foreground ,purple))))
    `(outline-8 ((,class (:foreground ,fg))))
 
+;;;; outline-minor-faces
+     `(outline-minor-1 ((,class (:foreground ,blue :weight ultra-bold ,@(timu-rouge-do-scale timu-rouge-scale-org-document-info 1.2)))))
+     `(outline-minor-2 ((,class (:foreground ,red :weight bold ,@(timu-rouge-do-scale timu-rouge-scale-org-document-info 1.2)))))
+     `(outline-minor-3 ((,class (:foreground ,orange :weight bold ,@(timu-rouge-do-scale timu-rouge-scale-org-document-info 1.1)))))
+     `(outline-minor-4 ((,class (:foreground ,darkred))))
+     `(outline-minor-5 ((,class (:foreground ,green))))
+     `(outline-minor-6 ((,class (:foreground ,teal))))
+     `(outline-minor-7 ((,class (:foreground ,purple))))
+     `(outline-minor-8 ((,class (:foreground ,fg))))
+
 ;;;; parenface
    `(paren-face ((,class (:foreground ,rouge5))))
 
