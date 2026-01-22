@@ -39,7 +39,6 @@ Color theme inspired by the [[https://vscodethemes.com/e/josef.rouge-theme][Roug
     (load-theme 'timu-rouge t))
 #+end_src
 
-
 * Configuration
 ** Scaling
 You can now scale some faces (in =org-mode= for now):
